@@ -126,7 +126,7 @@ class _DatePageState extends State<DatePage> {
                 InkWell(
                   onTap: () {
                     if (selectedDate != null) {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(builder: (_) => const HomePage()),
                       );

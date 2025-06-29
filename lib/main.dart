@@ -1,9 +1,20 @@
 import 'package:app/splash_screen.dart';
+import 'package:app/utils/notification_service.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'providers/user_provider.dart';
+import 'package:permission_handler/permission_handler.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Request notification permission on Android 13+
+  if (await Permission.notification.isDenied) {
+    await Permission.notification.request();
+  }
+
+  NotificationService().initNotification();
+
   runApp(
     ChangeNotifierProvider(create: (_) => UserProvider(), child: const MyApp()),
   );

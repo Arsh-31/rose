@@ -91,41 +91,6 @@ class _NamePageState extends State<NamePage> {
                     ),
 
                     const SizedBox(height: 30),
-                    // ElevatedButton.icon(
-                    //   onPressed: () {
-                    //     if (formKey.currentState!.validate()) {
-                    //       Provider.of<UserProvider>(
-                    //         context,
-                    //         listen: false,
-                    //       ).setName(controller.text.trim());
-
-                    //       Navigator.push(
-                    //         context,
-                    //         MaterialPageRoute(builder: (_) => const DatePage()),
-                    //       );
-                    //     }
-                    //   },
-                    //   icon: const Icon(
-                    //     Icons.arrow_forward,
-                    //     color: Colors.black,
-                    //   ),
-                    //   label: const Text(
-                    //     "Continue",
-                    //     style: TextStyle(fontWeight: FontWeight.w600),
-                    //   ),
-                    //   style: ElevatedButton.styleFrom(
-                    //     backgroundColor: const Color(0xFFFBF5E7),
-                    //     foregroundColor: Colors.black,
-                    //     padding: const EdgeInsets.symmetric(
-                    //       horizontal: 36,
-                    //       vertical: 14,
-                    //     ),
-                    //     shape: RoundedRectangleBorder(
-                    //       borderRadius: BorderRadius.circular(12),
-                    //     ),
-                    //     elevation: 4,
-                    //   ),
-                    // ),
                     InkWell(
                       onTap: () {
                         if (formKey.currentState!.validate()) {
@@ -134,7 +99,7 @@ class _NamePageState extends State<NamePage> {
                             listen: false,
                           ).setName(controller.text.trim());
 
-                          Navigator.push(
+                          Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(builder: (_) => const DatePage()),
                           );

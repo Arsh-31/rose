@@ -1,4 +1,5 @@
 import 'package:app/providers/user_provider.dart';
+import 'package:app/utils/notification_service.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -76,16 +77,6 @@ class _FirstPageState extends State<FirstPage> {
                       selected, // The birthday you selected earlier
                     ),
                 onDaySelected: (_, __) {}, // Do nothing on tap
-                // calendarStyle:
-                // CalendarStyle(
-                //   selectedDecoration: const BoxDecoration(
-                //     color: Colors.black87,
-                //     shape: BoxShape.circle,
-                //   ),
-                //   selectedTextStyle: const TextStyle(color: Colors.white),
-                //   weekendTextStyle: const TextStyle(color: Colors.black54),
-                //   defaultTextStyle: const TextStyle(color: Colors.black87),
-                // ),
                 calendarStyle: CalendarStyle(
                   selectedDecoration: const BoxDecoration(
                     color: Color(0xFFF7CBB1),
@@ -130,12 +121,7 @@ class _FirstPageState extends State<FirstPage> {
               ),
             ),
             const SizedBox(height: 18),
-            if (selectedDate != null)
-              // Text(
-              //   "Selected birthday: ${selectedDate.day}/${selectedDate.month}",
-              //   style: const TextStyle(fontSize: 18, color: Colors.black87),
-              // ),
-              const SizedBox(height: 10),
+            if (selectedDate != null) const SizedBox(height: 10),
             Text(
               "Hello, $name!",
               style: const TextStyle(
@@ -156,6 +142,16 @@ class _FirstPageState extends State<FirstPage> {
                   fontWeight: FontWeight.w500,
                 ),
               ),
+            // ElevatedButton(
+            //   onPressed: () {
+            //     NotificationService().showNotification(
+            //       id: 0,
+            //       title: "Title",
+            //       body: "Body",
+            //     );
+            //   },
+            //   child: const Text("Send Notif"),
+            // ),
           ],
         ),
       ),
